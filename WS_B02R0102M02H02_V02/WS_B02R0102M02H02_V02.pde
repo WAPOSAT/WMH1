@@ -32,7 +32,7 @@ uint8_t status;
 char body[100];
 unsigned long previous;
 
-float Max=100;
+float Max=100*1; //233.1;
 //se declara las vartiables para los sensores
 float value_orp;
 float value_battery;
@@ -44,7 +44,7 @@ float value_temperature;
 //se objetos con las clases temperatura y orp
 pt1000Class TemperatureSensor;
 ORPClass ORPSensor;
-char hibernateTime[] = "00:00:05:00";
+char hibernateTime[] = "00:00:00:10";
 
 
 void setup()
@@ -133,6 +133,10 @@ value_battery=PWR.getBatteryVolts();
 
   // Get the sensor value as a current in mA
   float current = currentLoopBoard.readCurrent(CHANNEL1);
+  USB.print("Current value read from channel 1: ");
+  USB.print(current);
+  USB.println("mA");
+
   current=(current-4)*Max/16;
 
   USB.print("Current value read from channel 1: ");
