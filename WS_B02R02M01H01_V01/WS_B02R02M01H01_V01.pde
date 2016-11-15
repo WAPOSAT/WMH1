@@ -3,6 +3,7 @@
 #include <currentLoop.h>
 // Instantiate currentLoop object in channel 1.
 float current;
+float Max=100;
 
 // selecciona cual es la posicion del modulo wifi
 uint8_t socket=SOCKET0;
@@ -100,7 +101,7 @@ value_battery=PWR.getBatteryVolts();
   USB.print("Current value read from channel 1: ");
   USB.print(current);
   USB.println("mA");
-
+current=(current-4)*Max/16;
   USB.println("***************************************");
   USB.print("\n");
 
@@ -129,7 +130,7 @@ dtostrf( current, 1, 3, float_str_current_turbides);
   {
     
   
-    snprintf( body, sizeof(body), "14|%s|15|%s",float_str_battery,float_str_current_turbides);
+    snprintf( body, sizeof(body), "14|%s|12|%s",float_str_battery,float_str_current_turbides);
     USB.println(body);
     status = WIFI.getURL(DNS, HOST, URL, body); 
      if( status == 1)

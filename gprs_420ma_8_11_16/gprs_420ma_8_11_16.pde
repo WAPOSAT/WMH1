@@ -87,7 +87,7 @@ value_battery=PWR.getBatteryVolts();
 
   // Get the sensor value as a current in mA
   float current = currentLoopBoard.readCurrent(CHANNEL2);
-  //current=(current-4)*Max/16;
+  current=(current-4)*Max/16;
 
   USB.print("Current value read from channel 1: ");
   USB.print(current);
