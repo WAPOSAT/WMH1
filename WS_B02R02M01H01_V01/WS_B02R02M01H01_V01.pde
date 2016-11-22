@@ -23,11 +23,14 @@ float value_battery;
 char HOST[] = "monitoreo.waposat.com";
 char URL[]  = "GET$/monitor/abc|123|";
 
+char hibernateTime[] = "00:00:05:00";
 
 
 void setup()
 {  ///////////////////////////////////////////
    ///activa la comunicacion por cable usb
+    PWR.ifHibernate();
+
   USB.ON();  
   
   
@@ -139,12 +142,29 @@ dtostrf( current, 1, 3, float_str_current_turbides);
       USB.print(F("WIFI.answer:"));
       USB.println(WIFI.answer);
   // Set Waspmote to Hibernate, waking up after "hibernateTime"
+
+    ////////////////////////////////////////////////
+    // 4. Entering Hibernate mode
+    ////////////////////////////////////////////////
+    USB.println(F("enter hibernate mode"));
+    delay(5000);
+
+    // Set Waspmote to Hibernate, waking up after "hibernateTime"
+    PWR.hibernate(hibernateTime, RTC_OFFSET, RTC_ALM1_MODE2);
     
       }
     
     else
     {
       USB.println(F("\nHTTP query ERROR"));
+    ////////////////////////////////////////////////
+    // 4. Entering Hibernate mode
+    ////////////////////////////////////////////////
+    USB.println(F("enter hibernate mode"));
+    delay(5000);
+
+    // Set Waspmote to Hibernate, waking up after "hibernateTime"
+    PWR.hibernate(hibernateTime, RTC_OFFSET, RTC_ALM1_MODE2);
    
     }
   }
@@ -153,6 +173,15 @@ dtostrf( current, 1, 3, float_str_current_turbides);
     USB.print(F("ERROR Connecting to AP."));  
     USB.print(F(" Time(ms):"));    
    // USB.println(millis()-previous);  
+    ////////////////////////////////////////////////
+    // 4. Entering Hibernate mode
+    ////////////////////////////////////////////////
+    USB.println(F("enter hibernate mode"));
+    delay(5000);
+
+    // Set Waspmote to Hibernate, waking up after "hibernateTime"
+    PWR.hibernate(hibernateTime, RTC_OFFSET, RTC_ALM1_MODE2);
+
   }  
   
   // Switch WiFi OFF
@@ -160,4 +189,18 @@ dtostrf( current, 1, 3, float_str_current_turbides);
   
 }
 
+
+////////////////////////////////////////////////
+// HIbernate Subroutine.
+////////////////////////////////////////////////
+void hibInterrupt()
+{
+    USB.println(F("---------------------"));
+    USB.println(F("Hibernate Interruption captured"));
+    USB.println(F("---------------------"));
+
+    // Clear Flag 
+    intFlag &= ~(HIB_INT);  
+    delay(2000);
+}
 
