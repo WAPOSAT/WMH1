@@ -68,14 +68,14 @@ float value_cond_calculated;
 #define zero_calibration 0.09
 ///////////////calibracion conductividad 
 // Value 1 used to calibrate the sensor
-#define point1_cond 84
+#define point1_cond 1413
 // Value 2 used to calibrate the sensor
-#define point2_cond 1413
+#define point2_cond 12880
 
 // Point 1 of the calibration 
-#define point1_cal 10880
+#define point1_cal 661.00
 // Point 2 of the calibration 
-#define point2_cal 728
+#define point2_cal 103.50
 ////////////////////////////
 //////////////calibracion ph
 // Calibration values
@@ -201,7 +201,7 @@ dtostrf( value_cond, 1, 3, float_str_cond_resist);
   USB.print(F(" Conductivity of the solution (mS/cm): "));
   USB.println(value_cond_calculated); 
 
-  snprintf(url,sizeof(url), "http://monitoreo.waposat.com/monitor/abc|123|1|%s|2|%s|5|%s|14|%s|16|%s",float_str_ph,float_str_temp, float_str_cond, float_str_battery,float_str_cond_resist);
+  snprintf(url,sizeof(url), "http://monitoreo.waposat.com/monitor/abc|123|2|%s|5|%s|14|%s|16|%s",float_str_temp, float_str_cond, float_str_battery,float_str_cond_resist);
     // 2. activate the GPRS_SIM928A module:
     answer = GPRS_SIM928A.ON(); 
     if ((answer == 1) || (answer == -3))
