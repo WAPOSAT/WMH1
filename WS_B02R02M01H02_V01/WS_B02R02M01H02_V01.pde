@@ -1,10 +1,10 @@
-
 // incluye lbreria para el modulo wifi
 #include <WaspWIFI.h>
 #include <currentLoop.h>
 // Instantiate currentLoop object in channel 1.
 float current;
-float Max=20;
+float Max=100;
+
 // selecciona cual es la posicion del modulo wifi
 uint8_t socket=SOCKET0;
 uint8_t status;
@@ -14,8 +14,8 @@ unsigned long previous;
 //se declara las vartiables para los sensores
 float value_temperature;
 //variables para iniciar la conexion wifi
-#define ESSID "Waposat"
-#define AUTHKEY "waposat123"
+#define ESSID "initecaruni"
+#define AUTHKEY "m53h32m53h32m"
 // el host y la url
 //char HOST[] = "http://estacion.waposat.com";
 //char URL[]  = "/monitor/";
@@ -108,7 +108,7 @@ current=(current-4)*Max/16;
   USB.println("***************************************");
   USB.print("\n");
 
-//  delay(1000);  
+  delay(1000);  
 ///////////////////
  
 ////////////////////  
