@@ -3,7 +3,7 @@
 #include <currentLoop.h>
 // Instantiate currentLoop object in channel 1.
 float current;
-float Max=100;
+float Max=20;
 
 // selecciona cual es la posicion del modulo wifi
 uint8_t socket=SOCKET0;
@@ -14,8 +14,8 @@ unsigned long previous;
 //se declara las vartiables para los sensores
 float value_temperature;
 //variables para iniciar la conexion wifi
-#define ESSID "initecaruni"
-#define AUTHKEY "m53h32m53h32m"
+#define ESSID "Waposat"
+#define AUTHKEY "waposat123"
 // el host y la url
 //char HOST[] = "http://estacion.waposat.com";
 //char URL[]  = "/monitor/";
@@ -23,7 +23,7 @@ float value_battery;
 char HOST[] = "monitoreo.waposat.com";
 char URL[]  = "GET$/monitor/abc|123|";
 
-char hibernateTime[] = "00:00:05:00";
+char hibernateTime[] = "00:00:03:00";
 
 
 void setup()
@@ -89,18 +89,18 @@ value_battery=PWR.getBatteryVolts();
 
 
   // Get the sensor value in integer format (0-1023)
-  int value = currentLoopBoard.readChannel(CHANNEL2); 
+  int value = currentLoopBoard.readChannel(CHANNEL4); 
   USB.print("Int value read from channel 1: ");
   USB.println(value);
 
   // Get the sensor value as a voltage in Volts
-  float voltage = currentLoopBoard.readVoltage(CHANNEL2); 
+  float voltage = currentLoopBoard.readVoltage(CHANNEL4); 
   USB.print("Voltage value rad from channel 1: ");
   USB.print(voltage);
   USB.println("V");
 
   // Get the sensor value as a current in mA
-  float current = currentLoopBoard.readCurrent(CHANNEL2);
+  float current = currentLoopBoard.readCurrent(CHANNEL4);
   USB.print("Current value read from channel 1: ");
   USB.print(current);
   USB.println("mA");
