@@ -77,13 +77,17 @@ float value_cond_calculated;
 // Point 2 of the calibration 
 #define point2_cal 103.50
 ////////////////////////////
+
+
 //////////////calibracion ph
 // Calibration values
-#define cal_point_10 1.90
-#define cal_point_7 2.02
-#define cal_point_4 2.16
+#define cal_point_10 2.0121
+#define cal_point_7 2.099
+#define cal_point_4 2.2001
 // Temperature at which calibration was carried out
-#define cal_temp 20.23
+#define cal_temp 29.27
+
+
 //////////////////////
 //variables para iniciar la conexion wifi
 //#define ESSID "initecaruni"
@@ -113,7 +117,7 @@ DOSensor.setCalibrationPoints(air_calibration, zero_calibration);
      // setup for Serial port over USB:
     USB.ON();
     USB.println(F("USB port started..."));
-
+    /*
     USB.println(F("---******************************************************************************---"));
     USB.println(F("GET request to the libelium's test url..."));
     USB.println(F("You can use this php to test the HTTP connection of the module."));
@@ -122,7 +126,7 @@ DOSensor.setCalibrationPoints(air_calibration, zero_calibration);
     USB.println(F("The syntax to add parameters is below:"));
     USB.println(F("getpost_frame_parser.php?parameter1=value1&parameter2=value2&...&last_parameter=last_value"));
     USB.println(F("---******************************************************************************---"));
-
+    */
     // 1. sets operator parameters
     GPRS_SIM928A.set_APN(apn, login, password);
     // And shows them
@@ -137,41 +141,40 @@ void loop()
 {
   ////////////////////////
 ///////////////////////////
-value_battery=PWR.getBatteryVolts();
+  value_battery=PWR.getBatteryVolts();
   ////read the orp 
-  value_orp = ORPSensor.readORP();
+  //value_orp = ORPSensor.readORP();
   value_temperature = TemperatureSensor.readTemperature();
   ///// Read the ph sensor
   value_pH = pHSensor.readpH();
   value_pH_calculated = pHSensor.pHConversion(value_pH,value_temp);
-///////////read the do sensor
-value_do = DOSensor.readDO();
-value_do_calculated = DOSensor.DOConversion(value_do);
-////read the conductividad sensor
- value_cond = ConductivitySensor.readConductivity();
-  value_cond_calculated = ConductivitySensor.conductivityConversion(value_cond);
+  ///////////read the do sensor
+  //value_do = DOSensor.readDO();
+  //value_do_calculated = DOSensor.DOConversion(value_do);
+  ////read the conductividad sensor
+  //value_cond = ConductivitySensor.readConductivity();
+  //value_cond_calculated = ConductivitySensor.conductivityConversion(value_cond);
 
 
   // Apply the calibration offset
   
   char float_str_battery[10];
   dtostrf(value_battery,1,3,float_str_battery);
-  value_orp_calculated = 1000*(value_orp - calibration_offset);
-  char float_str_orp[10];
-dtostrf( value_orp_calculated, 1, 3, float_str_orp);
-char float_str_temp[10];
-dtostrf( value_temperature, 1, 3, float_str_temp);
-char float_str_ph[10];
-dtostrf( value_pH_calculated, 1, 3, float_str_ph);
-char float_str_do[10];
-dtostrf( value_do_calculated, 1, 3, float_str_do);
-char float_str_cond[10];
-dtostrf( value_cond_calculated, 1, 3, float_str_cond);
-
-char float_str_cond_resist[10];
-dtostrf( value_cond, 1, 3, float_str_cond_resist);
+  //value_orp_calculated = 1000*(value_orp - calibration_offset);
+  //char float_str_orp[10];
+  //dtostrf( value_orp_calculated, 1, 3, float_str_orp);
+  char float_str_temp[10];
+  dtostrf( value_temperature, 1, 3, float_str_temp);
+  char float_str_ph[10];
+  dtostrf( value_pH_calculated, 1, 3, float_str_ph);
+  //char float_str_do[10];
+  //dtostrf( value_do_calculated, 1, 3, float_str_do);
+  //char float_str_cond[10];
+  //dtostrf( value_cond_calculated, 1, 3, float_str_cond);
+  //char float_str_cond_resist[10];
+  //dtostrf( value_cond, 1, 3, float_str_cond_resist);
     
-   USB.print(F("Battery Level: "));
+  USB.print(F("Battery Level: "));
   USB.print(value_battery,DEC);
   USB.print(F(" %"));
   
@@ -180,28 +183,29 @@ dtostrf( value_cond, 1, 3, float_str_cond_resist);
   USB.print(PWR.getBatteryVolts());
   USB.println(F(" V")); 
   
-    USB.println();
-    USB.print(F(" ORP aproximado: "));
-    USB.print(value_orp_calculated);
-    USB.println(F("mili volts"));  
-    USB.print(F("Temperatura (grados centigrados ): "));
-    USB.println(value_temperature);
-    USB.println();
-     USB.print(F("pH value: "));
+//  USB.println();
+//  USB.print(F(" ORP aproximado: "));
+//  USB.print(value_orp_calculated);
+//  USB.println(F("mili volts"));  
+  USB.print(F("Temperatura (grados centigrados ): "));
+  USB.println(value_temperature);
+  USB.println();
+  USB.print(F("pH value: "));
   USB.print(value_pH);
   USB.print(F("volts  | "));
-   USB.print(F(" pH Estimated: "));
+  USB.print(F(" pH Estimated: "));
   USB.println(value_pH_calculated);
-  USB.print(F("DO Output Voltage: "));
-  USB.print(value_do);
-    USB.print(F(" DO Percentage: "));
-  USB.println(value_orp_calculated);
-  USB.print(F("Conductivity Output Resistance: "));
-  USB.print(value_cond);
-  USB.print(F(" Conductivity of the solution (mS/cm): "));
-  USB.println(value_cond_calculated); 
+//  USB.print(F("DO Output Voltage: "));
+//  USB.print(value_do);
+//  USB.print(F(" DO Percentage: "));
+//  USB.println(value_orp_calculated);
+//  USB.print(F("Conductivity Output Resistance: "));
+//  USB.print(value_cond);
+//  USB.print(F(" Conductivity of the solution (mS/cm): "));
+//  USB.println(value_cond_calculated); 
 
-  snprintf(url,sizeof(url), "http://monitoreo.waposat.com/monitor/abc|123|2|%s|5|%s|14|%s|16|%s",float_str_temp, float_str_cond, float_str_battery,float_str_cond_resist);
+  snprintf(url,sizeof(url), "http://monitoreo.waposat.com/monitor/abc|123|2|%s|17|%s|6|%s",float_str_temp, float_str_ph, float_str_battery);
+  //snprintf(url,sizeof(url), "http://monitoreo.waposat.com/monitor/abc|123|2|%s|6|%s",float_str_temp, float_str_battery);
     // 2. activate the GPRS_SIM928A module:
     answer = GPRS_SIM928A.ON(); 
     if ((answer == 1) || (answer == -3))
@@ -279,7 +283,7 @@ dtostrf( value_cond, 1, 3, float_str_cond_resist);
   //  counter++;
 
 
-    delay(5000);
+    delay(100);
 
       
       
