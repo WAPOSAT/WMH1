@@ -76,24 +76,24 @@ float value_cond_calculated;
 
 ///////////////calibracion conductividad 
 // Value 1 used to calibrate the sensor
-#define point1_cond 84
+#define point1_cond 12880
 // Value 2 used to calibrate the sensor
-#define point2_cond 1413
+#define point2_cond 80000
 
 // Point 1 of the calibration 
-#define point1_cal 8215.00
+#define point1_cal 92.00
 // Point 2 of the calibration 
-#define point2_cal 796.00
+#define point2_cal 38.6
 ////////////////////////////
 
 
 //////////////calibracion ph
 // Calibration values
-#define cal_point_10 2.001
-#define cal_point_7 2.0957
+#define cal_point_10 2.0040
+#define cal_point_7 2.0978
 #define cal_point_4 2.2380
 // Temperature at which calibration was carried out
-#define cal_temp 31.0
+#define cal_temp 28.9
 
 
 //////////////////////
@@ -175,8 +175,7 @@ void loop()
   char float_str_temp[10];
   dtostrf( value_temperature, 1, 3, float_str_temp);
   char float_str_ph[10];
-  char float_str_phres[10];
-  dtostrf( value_pH, 1, 4, float_str_phres);
+  //dtostrf( value_pH, 1, 4, float_str_ph);
   dtostrf( value_pH_calculated, 1, 3, float_str_ph);
   //char float_str_do[10];
   //dtostrf( value_do_calculated, 1, 3, float_str_do);
@@ -216,7 +215,7 @@ void loop()
  USB.print(F(" Conductivity of the solution (mS/cm): "));
  USB.println(value_cond_calculated); 
 
-    //snprintf(url,sizeof(url), "http://monitoreo.waposat.com/monitor/abc|123|10|%s|18|%s|7|%s",float_str_temp, float_str_ph, float_str_phres);
+    //snprintf(url,sizeof(url), "http://monitoreo.waposat.com/monitor/abc|123|10|%s|18|%s|21|%s|5|%s",float_str_temp, float_str_ph, float_str_battery, float_str_cond);
     snprintf(url,sizeof(url), "http://monitoreo.waposat.com/monitor/abc|123|10|%s|18|%s|5|%s",float_str_temp, float_str_ph, float_str_cond);
   //snprintf(url,sizeof(url), "http://monitoreo.waposat.com/monitor/abc|123|2|%s|6|%s",float_str_temp, float_str_battery);
     
