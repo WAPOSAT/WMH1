@@ -117,8 +117,8 @@ void setup()
 { // PWR.ifHibernate();
  
  
-    pHSensor.setCalibrationPoints(cal_point_10, cal_point_7, cal_point_4, cal_temp);
-DOSensor.setCalibrationPoints(air_calibration, zero_calibration);
+ pHSensor.setCalibrationPoints(cal_point_10, cal_point_7, cal_point_4, cal_temp);
+ DOSensor.setCalibrationPoints(air_calibration, zero_calibration);
  ConductivitySensor.setCalibrationPoints(point1_cond, point1_cal, point2_cond, point2_cal);
 
      //SensorSW.ON();
@@ -239,8 +239,8 @@ void loop()
                 USB.println(F("Get the URL with GET request..."));          
                 RTC.ON();
 
-      //          sprintf(url, "http://monitoreo.waposat.com/monitor/abc|123|1|%s|2|%s|3|%s", float_str_temp, float_str_orp,float_str_battery);
-//snprintf(url,sizeof(url), "http://monitoreo.waposat.com/monitor/abc|123|1|%s|2|%s|3|%s|4|%s|5|%s|6|%s",float_str_ph,float_str_temp, float_str_do, float_str_orp, float_str_cond, float_str_battery);
+                //sprintf(url, "http://monitoreo.waposat.com/monitor/abc|123|1|%s|2|%s|3|%s", float_str_temp, float_str_orp,float_str_battery);
+                //snprintf(url,sizeof(url), "http://monitoreo.waposat.com/monitor/abc|123|1|%s|2|%s|3|%s|4|%s|5|%s|6|%s",float_str_ph,float_str_temp, float_str_do, float_str_orp, float_str_cond, float_str_battery);
                
                
                 USB.println(F("-------------------------------------------"));
@@ -299,6 +299,4 @@ void loop()
 
     delay(100);
 
-      
-      
 }
