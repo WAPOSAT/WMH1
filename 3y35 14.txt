@@ -1,0 +1,115 @@
+E#
+USB port started...
+APN: movistar.pe
+LOGIN: movistar@datos
+PASSWORD: movistar
+---******************************************************************************---
+Init RTC
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.9395141601
+
+pH value: 2.0477378368volts  |  pH Estimated: 9.1368856430
+Conductivity Output Resistance: 3084.6271972656 Conductivity of the solution (mS/cm): 309.2473754882
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.8630981445
+
+pH value: 2.0465655326volts  |  pH Estimated: 9.1834964752
+Conductivity Output Resistance: 3082.5805664062 Conductivity of the solution (mS/cm): 309.5029296875
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.5716552734
+
+pH value: 2.0462460517volts  |  pH Estimated: 9.2007808685
+Conductivity Output Resistance: 3082.8566894531 Conductivity of the solution (mS/cm): 309.4684143066
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.4123840332
+
+pH value: 2.0461263656volts  |  pH Estimated: 9.2081279754
+Conductivity Output Resistance: 3082.8437500000 Conductivity of the solution (mS/cm): 309.4700317382
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.3132324218
+
+pH value: 2.0466568470volts  |  pH Estimated: 9.1892042160
+Conductivity Output Resistance: 3083.4194335937 Conductivity of the solution (mS/cm): 309.3981323242
+GPRS_SIM928A module ready...
+GPRS_SIM928A module connected to the network...
+Get the URL with GET request...
+-------------------------------------------
+http://monitoreo.waposat.com/monitor/abc|123|10|13.313|18|9.189|5|309.398|21|4.142
+-------------------------------------------
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.2274780273
+
+pH value: 2.0459871292volts  |  pH Estimated: 9.2166910171
+Conductivity Output Resistance: 3082.0351562500 Conductivity of the solution (mS/cm): 309.5711059570
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.2007141113
+
+pH value: 2.0462393760volts  |  pH Estimated: 9.2073392868
+Conductivity Output Resistance: 3085.4335937500 Conductivity of the solution (mS/cm): 309.1467895507
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.1809692382
+
+pH value: 2.0489256381volts  |  pH Estimated: 9.1031951904
+Conductivity Output Resistance: 3085.6430664062 Conductivity of the solution (mS/cm): 309.1206665039
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.1600036621
+
+pH value: 2.0472290515volts  |  pH Estimated: 9.1695337295
+Conductivity Output Resistance: 3086.9035644531 Conductivity of the solution (mS/cm): 308.9635925292
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.1582641601
+
+pH value: 2.0457258224volts  |  pH Estimated: 9.2280406951
+Conductivity Output Resistance: 3084.5026855468 Conductivity of the solution (mS/cm): 309.2629089355
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.1575927734
+
+pH value: 2.0469470024volts  |  pH Estimated: 9.1805458068
+Conductivity Output Resistance: 3087.0249023437 Conductivity of the solution (mS/cm): 308.9484863281
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.1618347167
+
+pH value: 2.0447380542volts  |  pH Estimated: 9.2664031982
+Conductivity Output Resistance: 3086.9089355468 Conductivity of the solution (mS/cm): 308.9629211425
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1354837417 V
+Temperatura (grados centigrados ): 13.1730957031
+
+pH value: 2.0461800098volts  |  pH Estimated: 9.2101192474
+Conductivity Output Resistance: 3083.6975097656 Conductivity of the solution (mS/cm): 309.3634033203
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1225805282 V
+Temperatura (grados centigrados ): 13.1638793945
+
+pH value: 2.0459649562volts  |  pH Estimated: 9.2186412811
+Conductivity Output Resistance: 3082.7663574218 Conductivity of the solution (mS/cm): 309.4797058105
+GPRS_SIM928A module ready...
+GPRS_SIM928A module cannot connect to the network
+Battery Level: 92 % | Battery (Volts): 4.1419353485 V
+Temperatura (grados centigrados ): 13.1858520507
+
+pH value: 2.0500416755volts  |  pH Estimated: 9.0597095489
+Conductivity Output Resistance: 3099.4467773437 Conductivity of the solution (mS/cm): 307.4093322753
+GPRS_SIM928A module ready...
