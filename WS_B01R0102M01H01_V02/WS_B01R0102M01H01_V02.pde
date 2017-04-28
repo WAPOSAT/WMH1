@@ -81,9 +81,9 @@ float value_cond_calculated;
 #define point2_cond 1413
 
 // Point 1 of the calibration 
-#define point1_cal 9731.00
+#define point1_cal 8215.00
 // Point 2 of the calibration 
-#define point2_cal 1148.50
+#define point2_cal 796.00
 ////////////////////////////
 
 
